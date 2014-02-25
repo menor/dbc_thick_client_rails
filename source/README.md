@@ -1,10 +1,17 @@
-# quizzes
 
-## This app exposes an API for a simple quiz appication.
+# Build A Thick Client On Rails
+
+##Learning Competencies
+- Build a client side heavy Rails.
+- Consume a JSON API.
+- Build Single Page App.
+
+##Summary
 
 Your mission: build a one-page app using (at least) jQuery, Javascript, and AJAX to render questions to the user, allow her to submit answers, tell her whether or not her submitted answer was correct, and give her her final correct / incorrect tally.
 
-Fork this repo to get started!
+The code is under the source folder.
+
 
 ## APIs
 
@@ -63,7 +70,7 @@ Every request (except listing quizzes) must pass a "session_key" which uniquely 
         question_id: 1,
         choice_id: 12,
         choice: "Yes"
-      }, 
+      },
       {
         quiz_id: 1,
         question_id: 1,
@@ -106,3 +113,11 @@ POST /questions/1/answers.json
   }
 }
 ```
+
+##Releases
+###Release 0
+A user can see a list of questions. Make it look nice.
+###Release 1
+A user can answer a question and gets a response whether it was right or wrong.
+###Release 2
+A user can get a final correct / incorrect tally.
