@@ -1,9 +1,19 @@
-<script id="Handlebars-Template" type="text/x-handlebars-template">
-
+<script id="Handlebars-Template-Quizzes" type="text/x-handlebars-template">
+  {{#each quizzes}}
+    <tr>
+        <td><a href="" data-id={{this.quiz_id}}>{{this.name}}</a></td>
+    </tr>
+  {{/each}}
 </script>
 
 <div class="container">
-  NOTHING TO SEE HERE!
+  <div class="quizzes_column">
+
+  </div>
+  <div class="question_column">
+
+  </div>
 </div>
+
 
 

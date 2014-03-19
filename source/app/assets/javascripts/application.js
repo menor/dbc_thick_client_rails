@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require_tree .
 //= require Handlebars
+
+$(document).ready(function() {
+  var quizzesTemplate = $.trim($('#Handlebars-Template-Quizzes').html())
+  var controller = new Controller(quizzesTemplate);
+  var binder = new Binder;
+  binder.bind($('.quizzes_column'), 'a', controller.getQuestions)
+
+  controller.initializePage();
+  // binder.bind($('.questions_column'), 'a', )
+});
