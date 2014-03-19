@@ -1,7 +1,13 @@
 function Binder() {}
 
 Binder.prototype = {
-  bind: function(target, event, selector, response) {
-    target.on(event, selector, response);
+  bind: function(){
+    //To implement later :)
+  },
+  bindQuiz: function(response) {
+    $('.quizzes_column').on('click', 'a',  response);
+  },
+  bindQuestion: function(response) {
+    $('.question_column').on('submit', 'form', response);
   }
 }

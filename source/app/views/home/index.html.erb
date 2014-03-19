@@ -1,9 +1,20 @@
 <script id="Handlebars-Template-Quizzes" type="text/x-handlebars-template">
 <ul>
   {{#each quizzes}}
-    <li>  <a class="question_name" href="" data-id={{this.quiz_id}}>{{this.name}}</a> </li>
+    <li><a href="/" class="question_name" data-id={{this.quiz_id}}>{{this.name}}</a></li>
   {{/each}}
 </ul>
+</script>
+
+<script id="Handlebars-Template-Question" type="text/x-handlebars-template">
+  <h1>{{question.question}}</h1>
+
+  <form data-id={{question.question_id}} action="/" method="post">
+    {{#each question.choices}}
+      <input type="radio" name="answer" value={{this.choice_id}} >{{this.choice}}<br>
+    {{/each}}
+    <input type="submit" value="Submit">
+  </form>
 </script>
 
 <div class="container">

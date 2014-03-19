@@ -17,10 +17,19 @@
 
 $(document).ready(function() {
   var quizzesTemplate = $.trim($('#Handlebars-Template-Quizzes').html())
-  var controller = new Controller(quizzesTemplate);
+  var questionTemplate = $.trim($('#Handlebars-Template-Question').html())
+  var controller = new Controller(quizzesTemplate, questionTemplate);
   var binder = new Binder;
-  binder.bind( $('.quizzes_column'), 'click', 'a', function(){controller.getQuestions(this)})
+
+  binder.bindQuiz( function(){
+    event.preventDefault();
+    controller.getQuestions(this.dataset.id);
+  });
+
+  binder.bindQuestion( function(){
+    event.preventDefault();
+    controller.sendAnswer(this.dataset.id, $('form').serializeArray()[0].value);
+  });
 
   controller.initializePage();
-  // binder.bind($('.questions_column'), 'a', )
 });
