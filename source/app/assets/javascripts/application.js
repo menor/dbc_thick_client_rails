@@ -19,7 +19,7 @@ $(document).ready(function() {
   var quizzesTemplate = $.trim($('#Handlebars-Template-Quizzes').html())
   var controller = new Controller(quizzesTemplate);
   var binder = new Binder;
-  binder.bind($('.quizzes_column'), 'a', controller.getQuestions)
+  binder.bind( $('.quizzes_column'), 'click', 'a', function(){controller.getQuestions(this)})
 
   controller.initializePage();
   // binder.bind($('.questions_column'), 'a', )

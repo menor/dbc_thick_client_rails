@@ -11,7 +11,7 @@ Controller.prototype = {
       this.view.renderQuizzes(data.quizzes);
     }.bind(this))
   },
-  getQuestions: function() {
-
+  getQuestions: function(question) {
+    debugger;
   }
 };

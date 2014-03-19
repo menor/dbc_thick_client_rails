@@ -1,9 +1,9 @@
 <script id="Handlebars-Template-Quizzes" type="text/x-handlebars-template">
+<ul>
   {{#each quizzes}}
-    <tr>
-        <td><a href="" data-id={{this.quiz_id}}>{{this.name}}</a></td>
-    </tr>
+    <li>  <a class="question_name" href="" data-id={{this.quiz_id}}>{{this.name}}</a> </li>
   {{/each}}
+</ul>
 </script>
 
 <div class="container">
