@@ -8,6 +8,7 @@ View.prototype = {
   renderQuizzes: function(quizzes) {
     var template = Handlebars.compile(this.quizzesTemplate);
     var html = template({quizzes: quizzes});
+    $('.questions_column').children().remove();
     $('.quizzes_column').append(html);
   },
   renderQuestion: function(question) {

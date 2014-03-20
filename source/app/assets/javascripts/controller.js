@@ -1,7 +1,7 @@
 function Controller(quizzesTemplate, questionTemplate, resultsTemplate){
   this.model = new Model;
   this.view = new View(quizzesTemplate, questionTemplate, resultsTemplate);
-  this.sessionKey = Math.floor(Math.random() *10000000000).toString(36);
+  this.sessionKey;
 }
 
 Controller.prototype = {
@@ -28,5 +28,8 @@ Controller.prototype = {
         that.view.renderResults(data.status);
       }
     })
+  },
+  newSessionKey: function(){
+    this.sessionKey = Math.floor(Math.random() *10000000000).toString(36);
   }
 };

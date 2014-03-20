@@ -24,6 +24,7 @@ $(document).ready(function() {
 
   binder.bindQuiz( function(){
     event.preventDefault();
+    controller.newSessionKey();
     controller.getQuestions(this.dataset.id);
   });
 
