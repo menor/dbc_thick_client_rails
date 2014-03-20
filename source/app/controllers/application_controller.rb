@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 
   def update_session
     return unless params[:session_key]
+    puts "* " * 80
     @simple_session = SimpleSession.find_by_session_key(params[:session_key])
     unless @simple_session
       @simple_session = SimpleSession.create(session_key: params[:session_key])

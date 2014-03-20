@@ -12,6 +12,7 @@ View.prototype = {
   renderQuestion: function(question) {
     var template = Handlebars.compile(this.questionTemplate);
     var html = template({question: question.question});
+    $('.question_column').children().remove();
     $('.question_column').append(html);
   }
 };
