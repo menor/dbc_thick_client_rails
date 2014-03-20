@@ -11,6 +11,7 @@ Model.prototype = {
       $(this).trigger('ajax:success', response)
     })
   },
+
   getQuestions: function(id, sessionKey) {
     $.ajax({
       type: "GET",

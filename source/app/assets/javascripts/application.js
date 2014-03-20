@@ -18,7 +18,8 @@
 $(document).ready(function() {
   var quizzesTemplate = $.trim($('#Handlebars-Template-Quizzes').html())
   var questionTemplate = $.trim($('#Handlebars-Template-Question').html())
-  var controller = new Controller(quizzesTemplate, questionTemplate);
+  var resultsTemplate = $.trim($('#Handlebars-Template-Results').html())
+  var controller = new Controller(quizzesTemplate, questionTemplate, resultsTemplate);
   var binder = new Binder;
 
   binder.bindQuiz( function(){

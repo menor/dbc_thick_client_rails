@@ -1,8 +1,6 @@
-function Controller(quizzesTemplate, questionTemplate){
+function Controller(quizzesTemplate, questionTemplate, resultsTemplate){
   this.model = new Model;
-  this.quizzesTemplate = quizzesTemplate;
-  this.questionTemplate = questionTemplate;
-  this.view = new View(quizzesTemplate, questionTemplate);
+  this.view = new View(quizzesTemplate, questionTemplate, resultsTemplate);
   this.sessionKey = Math.floor(Math.random() *10000000000).toString(36);
 }
 
@@ -27,7 +25,7 @@ Controller.prototype = {
         that.getQuestions(data.status.quiz_id);
       }
       else {
-        console.log("No MORE!")
+        that.view.renderResults(data.status);
       }
     })
   }
