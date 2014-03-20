@@ -19,19 +19,7 @@ $(document).ready(function() {
   var quizzesTemplate = $.trim($('#Handlebars-Template-Quizzes').html())
   var questionTemplate = $.trim($('#Handlebars-Template-Question').html())
   var resultsTemplate = $.trim($('#Handlebars-Template-Results').html())
-  var controller = new Controller(quizzesTemplate, questionTemplate, resultsTemplate);
-  var binder = new Binder;
+  var binder = new Binder(quizzesTemplate, questionTemplate, resultsTemplate);
 
-  binder.bindQuiz( function(){
-    event.preventDefault();
-    controller.newSessionKey();
-    controller.getQuestions(this.dataset.id);
-  });
-
-  binder.bindQuestion( function(){
-    event.preventDefault();
-    controller.sendAnswer(this.dataset.id, $('form').serializeArray()[0].value);
-  });
-
-  controller.initializePage();
+  binder.bindAll();
 });
