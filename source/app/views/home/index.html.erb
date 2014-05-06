@@ -1,3 +1,36 @@
+<script id="Handlebars-Template-Quizzes" type="text/x-handlebars-template">
+<ul>
+  {{#each quizzes}}
+    <li><a href="/" class="question_name" data-id={{this.quiz_id}}>{{this.name}}</a></li>
+  {{/each}}
+</ul>
+</script>
+
+<script id="Handlebars-Template-Question" type="text/x-handlebars-template">
+  <h1>{{question.question}}</h1>
+
+  <form data-id={{question.question_id}} action="/" method="post">
+    {{#each question.choices}}
+      <input type="radio" name="answer" value={{this.choice_id}} >{{this.choice}}<br>
+    {{/each}}
+    <input type="submit" value="Submit">
+  </form>
+</script>
+
+<script id="Handlebars-Template-Results" type="text/x-handlebars-template">
+<h1>RESULTS</h1>
+<h2> right answers: {{ num_correct }}</h2>
+<h2> wrong answers: {{ num_incorrect }}</h2>
+</script>
+
 <div class="container">
-  NOTHING TO SEE HERE!
+  <div class="quizzes_column">
+
+  </div>
+  <div class="question_column">
+
+  </div>
 </div>
+
+
+

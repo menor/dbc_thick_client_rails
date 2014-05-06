@@ -13,3 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require Handlebars
+
+$(document).ready(function() {
+  var quizzesTemplate = $.trim($('#Handlebars-Template-Quizzes').html())
+  var questionTemplate = $.trim($('#Handlebars-Template-Question').html())
+  var resultsTemplate = $.trim($('#Handlebars-Template-Results').html())
+  var binder = new Binder(quizzesTemplate, questionTemplate, resultsTemplate);
+
+  binder.bindAll();
+});
